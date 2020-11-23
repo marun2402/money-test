@@ -1,0 +1,16 @@
+//-
+  options.text - текст
+  
+  
+  
+
+mixin radio(options)
+  if !options
+    - options = {}
+  
+  .radio
+    each element in options.list
+      .radio__item
+        label
+          input.radio__input(type='radio' name=options.name value=element.value)
+          .radio__text=element.text

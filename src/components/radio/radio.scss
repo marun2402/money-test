@@ -1,0 +1,47 @@
+.radio{
+    &__item {
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: solid 1px #bbe7a2;
+        padding: .4rem 1rem;
+    }
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;        
+    }
+    &__text {
+        position: relative;
+        padding: 0 0 0 30px;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #bbe7a2;
+            border-radius: 50%;
+            background: #bbe7a2;            
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(180deg,#bc9cff,#8ba4f9);
+            opacity: 0;
+            transition: .2s;
+        }
+    }
+
+    &__input:checked + &__text:after {
+        opacity: 1;
+    }    
+}

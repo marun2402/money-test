@@ -1,0 +1,20 @@
+//-
+  options.text - текст
+  options.type - тип ('', 'full', 'border', 'link')
+  options.arrow - задает стрелку (bool)
+  options.isSubmit - задает тип кнопки Submit (bool)
+  
+
+mixin btn(options)
+  if !options
+    - options = {}
+  -
+    var classes = ''
+    classes += options.type ? ' btn_' + options.type : ''
+    classes += options.arrow ? ' btn_arrow' : ''
+    
+
+  button.btn(class = classes,
+      type = options.isSubmit ? 'submit' : false,      
+    )= options.text || 'Click me'
+
